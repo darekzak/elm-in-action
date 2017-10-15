@@ -8216,9 +8216,7 @@ var _darekzak$elm_in_action$PhotoGroove$view = function (model) {
 					},
 					A2(
 						_elm_lang$core$List$map,
-						function (photo) {
-							return A2(_darekzak$elm_in_action$PhotoGroove$viewThumbnail, model.selectedUrl, photo);
-						},
+						_darekzak$elm_in_action$PhotoGroove$viewThumbnail(model.selectedUrl),
 						model.photos)),
 				_1: {
 					ctor: '::',

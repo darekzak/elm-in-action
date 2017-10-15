@@ -1,0 +1,24 @@
+{
+  "name": "elminaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "elm.js",
+  "dependencies": {
+    "elm": "^0.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "elm-make PhotoGroove.elm --output elm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darekzak/elm-in-action.git"
+  },
+  "author": "",
+  "license": "BSD3",
+  "bugs": {
+    "url": "https://github.com/darekzak/elm-in-action/issues"
+  },
+  "homepage": "https://github.com/darekzak/elm-in-action#readme"
+}
