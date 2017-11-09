@@ -8282,6 +8282,7 @@ var _darekzak$elm_in_action$PhotoGroove$initialModel = {
 	},
 	selectedUrl: '1.jpeg'
 };
+var _darekzak$elm_in_action$PhotoGroove$photoArray = _elm_lang$core$Array$fromList(_darekzak$elm_in_action$PhotoGroove$initialModel.photos);
 var _darekzak$elm_in_action$PhotoGroove$urlPrefix = 'http://elm-in-action.com/';
 var _darekzak$elm_in_action$PhotoGroove$viewThumbnail = F2(
 	function (selectedUrl, thumbnail) {
@@ -8369,6 +8370,17 @@ var _darekzak$elm_in_action$PhotoGroove$view = function (model) {
 };
 var _darekzak$elm_in_action$PhotoGroove$main = _elm_lang$html$Html$beginnerProgram(
 	{model: _darekzak$elm_in_action$PhotoGroove$initialModel, view: _darekzak$elm_in_action$PhotoGroove$view, update: _darekzak$elm_in_action$PhotoGroove$update})();
+var _darekzak$elm_in_action$PhotoGroove$Msg = F2(
+	function (a, b) {
+		return {operation: a, data: b};
+	});
+var _darekzak$elm_in_action$PhotoGroove$Photo = function (a) {
+	return {url: a};
+};
+var _darekzak$elm_in_action$PhotoGroove$Model = F2(
+	function (a, b) {
+		return {photos: a, selectedUrl: b};
+	});
 
 var Elm = {};
 Elm['PhotoGroove'] = Elm['PhotoGroove'] || {};

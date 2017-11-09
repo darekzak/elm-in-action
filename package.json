@@ -9,7 +9,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "elm-make PhotoGroove.elm --output elm.js"
+    "start": "elm-make PhotoGroove.elm --output elm.js",
+    "live": "elm-live PhotoGroove.elm --output=elm.js --open"
   },
   "repository": {
     "type": "git",
