@@ -8262,9 +8262,19 @@ var _elm_lang$html$Html_Events$Options = F2(
 
 var _darekzak$elm_in_action$PhotoGroove$update = F2(
 	function (msg, model) {
-		return _elm_lang$core$Native_Utils.eq(msg.operation, 'SELECT_PHOTO') ? _elm_lang$core$Native_Utils.update(
-			model,
-			{selectedUrl: msg.data}) : model;
+		var _p0 = msg.operation;
+		switch (_p0) {
+			case 'SELECT_PHOTO':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{selectedUrl: msg.data});
+			case 'SUPRISE_ME':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{selectedUrl: '2.jpeg'});
+			default:
+				return model;
+		}
 	});
 var _darekzak$elm_in_action$PhotoGroove$initialModel = {
 	photos: {
@@ -8335,35 +8345,51 @@ var _darekzak$elm_in_action$PhotoGroove$view = function (model) {
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$div,
+					_elm_lang$html$Html$button,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$id('thumbnails'),
+						_0: _elm_lang$html$Html_Events$onClick(
+							{operation: 'SUPRISE_ME', data: ''}),
 						_1: {ctor: '[]'}
 					},
-					A2(
-						_elm_lang$core$List$map,
-						_darekzak$elm_in_action$PhotoGroove$viewThumbnail(model.selectedUrl),
-						model.photos)),
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Suprise me!'),
+						_1: {ctor: '[]'}
+					}),
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$img,
+						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('large'),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$src(
-									A2(
-										_elm_lang$core$Basics_ops['++'],
-										_darekzak$elm_in_action$PhotoGroove$urlPrefix,
-										A2(_elm_lang$core$Basics_ops['++'], 'large/', model.selectedUrl))),
-								_1: {ctor: '[]'}
-							}
+							_0: _elm_lang$html$Html_Attributes$id('thumbnails'),
+							_1: {ctor: '[]'}
 						},
-						{ctor: '[]'}),
-					_1: {ctor: '[]'}
+						A2(
+							_elm_lang$core$List$map,
+							_darekzak$elm_in_action$PhotoGroove$viewThumbnail(model.selectedUrl),
+							model.photos)),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$img,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('large'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$src(
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											_darekzak$elm_in_action$PhotoGroove$urlPrefix,
+											A2(_elm_lang$core$Basics_ops['++'], 'large/', model.selectedUrl))),
+									_1: {ctor: '[]'}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});
